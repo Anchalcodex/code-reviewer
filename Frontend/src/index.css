@@ -1,0 +1,254 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  background: #0a0f1c;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
+    Helvetica, Arial, sans-serif;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  background: linear-gradient(135deg, #0a0f1c, #111827);
+}
+
+main .left,
+main .right {
+  height: 100%;
+  flex-basis: 50%;
+  border-radius: 0.7rem;
+  overflow: hidden;
+}
+
+/* =========================
+   LEFT CODE PANEL
+========================= */
+
+main .left {
+  background: #0b1120;
+  position: relative;
+  border: 1px solid #1e293b;
+  border-radius: 0.7rem;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* Code editor area */
+
+.left .code {
+  height: 100%;
+  width: 100%;
+  background: #0b1120;
+  padding: 1rem;
+  overflow: auto;
+}
+
+.code pre,
+.code pre code {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  border-radius: 0.5rem;
+  background-color: #0b1120 !important;
+}
+
+/* Editor text */
+
+.code textarea {
+  outline: none !important;
+  border: none !important;
+
+  color: #e2e8f0 !important;
+
+  background: transparent !important;
+
+  font-family: "Fira Code", "Fira Mono", Consolas, monospace !important;
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+
+  caret-color: #60a5fa;
+}
+
+/* Text selection */
+
+.code textarea::selection {
+  background: rgba(59, 130, 246, 0.3);
+}
+
+/* =========================
+   EDITOR SCROLLBAR
+========================= */
+
+.left .code::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.left .code::-webkit-scrollbar-track {
+  background: #0b1120;
+}
+
+.left .code::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 10px;
+}
+
+.left .code::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* =========================
+   RIGHT AI RESPONSE PANEL
+========================= */
+
+main .right {
+  background: #f8fafc;
+
+  color: #1e293b;
+
+  padding: 1.5rem 2rem;
+
+  font-size: 1.05rem;
+
+  overflow: auto;
+
+  border: 1px solid #cbd5e1;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+  line-height: 1.7;
+}
+
+/* =========================
+   MARKDOWN CONTENT
+========================= */
+
+main .right h1,
+main .right h2,
+main .right h3 {
+  color: #0f172a;
+  margin-bottom: 0.8rem;
+}
+
+main .right h1 {
+  font-size: 1.8rem;
+}
+
+main .right h2 {
+  font-size: 1.5rem;
+}
+
+main .right h3 {
+  font-size: 1.25rem;
+}
+
+main .right p {
+  margin-bottom: 1rem;
+}
+
+main .right ul,
+main .right ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+main .right li {
+  margin-bottom: 0.4rem;
+}
+
+/* =========================
+   CODE BLOCKS IN AI RESPONSE
+========================= */
+
+main .right pre {
+  background: #0f172a !important;
+
+  color: #e2e8f0;
+
+  padding: 1rem;
+
+  border-radius: 0.6rem;
+
+  overflow-x: auto;
+
+  border: 1px solid #1e293b;
+
+  margin: 1rem 0;
+}
+
+main .right code {
+  font-family: "Fira Code", "Fira Mono", monospace;
+}
+
+main .right p code,
+main .right li code {
+  background: #e2e8f0;
+  color: #7c3aed;
+  padding: 0.15rem 0.35rem;
+  border-radius: 0.3rem;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+main .left ::-webkit-scrollbar,
+main .right::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+main .left ::-webkit-scrollbar-track,
+main .right::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+main .left ::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 10px;
+}
+
+main .right::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 10px;
+}
+
+main .left ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+main .right::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 900px) {
+  main {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  main .left,
+  main .right {
+    flex-basis: 50%;
+    width: 100%;
+  }
+
+  main .right {
+    font-size: 1rem;
+  }
+}
